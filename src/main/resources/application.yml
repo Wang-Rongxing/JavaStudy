@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/MyBatis_DB?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: wrx20040103
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    com.hnsoftedu.mapper: debug
