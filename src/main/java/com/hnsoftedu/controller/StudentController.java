@@ -97,6 +97,7 @@ countId	String		XML 自定义 count 查询的 statementId
     public Page<Student> findByPage3(Student student,int pageNo,int pageSize){
         return iStudentService.selectByPage(student,pageNo,pageSize);
     }
+    //修改功能
     @RequestMapping("/updateStudent")
     public boolean updateStudent(@RequestBody Student student){//@RequestBody数据封装成json
         return iStudentService.updateStudent(student);
