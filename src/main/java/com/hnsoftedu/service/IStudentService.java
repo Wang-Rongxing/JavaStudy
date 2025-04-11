@@ -21,4 +21,5 @@ public interface IStudentService extends IService<Student> {
     boolean removeStudentById(Student student);
 
     Page<Student> selectByPage(Student student, int pageNo, int pageSize);
+    boolean updateStudent(Student student);
 }

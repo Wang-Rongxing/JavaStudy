@@ -5,14 +5,14 @@ import com.hnsoftedu.entity.Student;
 import com.hnsoftedu.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
 
 /**
  * <p>
@@ -96,5 +96,9 @@ countId	String		XML 自定义 count 查询的 statementId
     @RequestMapping("/page3")
     public Page<Student> findByPage3(Student student,int pageNo,int pageSize){
         return iStudentService.selectByPage(student,pageNo,pageSize);
+    }
+    @RequestMapping("/updateStudent")
+    public boolean updateStudent(@RequestBody Student student){//@RequestBody数据封装成json
+        return iStudentService.updateStudent(student);
     }
 }
