@@ -82,7 +82,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         wrapper.eq(Student::getId,student.getId());
         // 执行删除并返回结果（删除记录数>0表示成功）
         //return this.remove(wrapper);
-        return studentMapper.delete(wrapper)>0?true:false;
+        return studentMapper.delete(wrapper) > 0;
     }
     /**
      * 分页查询学生信息
@@ -119,6 +119,6 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
             wrapper.set(Student::getAge,student.getAge());
             wrapper.set(Student::getScore,student.getScore());
         }
-        return studentMapper.update(null,wrapper)>0?true:false;
+        return studentMapper.update(null, wrapper) > 0;
     }
 }
