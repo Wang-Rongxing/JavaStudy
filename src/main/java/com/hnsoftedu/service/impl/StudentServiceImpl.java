@@ -109,4 +109,15 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         // 执行分页查询
         return studentMapper.selectPage(page,wrapper);
     }
+    @Override
+    public boolean updateStudent(Student student) {
+        LambdaUpdateWrapper<Student> wrapper = new LambdaUpdateWrapper<>();
+        if (StringUtils.isNotBlank(student.getName())){
+            wrapper.eq(Student::getId,student.getId());
+            wrapper.set(Student::getName,student.getName());
+            wrapper.set(Student::getAge,student.getAge());
+            wrapper.set(Student::getScore,student.getScore());
+        }
+        return studentMapper.update(null,wrapper)>0?true:false;
+    }
 }
